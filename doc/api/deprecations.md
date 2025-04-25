@@ -981,6 +981,9 @@ The `tls.SecurePair` class is deprecated. Please use
 
 <!-- YAML
 changes:
+  - version: REPLACEME
+    pr-url: https://github.com/nodejs/node/pull/58027
+    description: End-of-Life.
   - version: v22.0.0
     pr-url: https://github.com/nodejs/node/pull/50488
     description: Runtime deprecation.
@@ -996,9 +999,9 @@ changes:
     description: Documentation-only deprecation.
 -->
 
-Type: Runtime
+Type: End-of-Life
 
-The [`util.isArray()`][] API is deprecated. Please use `Array.isArray()`
+The [`util.isArray()`][] API has been removed. Please use `Array.isArray()`
 instead.
 
 ### DEP0045: `util.isBoolean()`
