@@ -1,7 +1,7 @@
 'use strict';
 
 const common = require('../common.js');
-const kIsNodeError = Symbol('kIsNodeError')
+const kIsNodeError = Symbol('kIsNodeError');
 
 const options = {
   flags: ['--expose-internals'],
