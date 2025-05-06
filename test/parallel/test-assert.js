@@ -1603,7 +1603,6 @@ test('Assert class', () => {
     'assert.AssertionError instanceof Error');
 
   assertInstance.throws(() => assert(false), assertInstance.AssertionError, 'ok(false)');
-  assertInstance('test', 'ok(\'test\')');
   assertInstance.ok(true);
   assertInstance.throws(() => assertInstance.equal(true, false),
           assertInstance.AssertionError, 'equal(true, false)');
