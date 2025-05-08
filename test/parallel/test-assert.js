@@ -1614,7 +1614,7 @@ test('Assert class basic instance', () => {
   );
   assertInstance.notStrictEqual(2, '2');
   assert.throws(() => assertInstance.strictEqual(2, '2'),
-                        assertInstance.AssertionError, 'strictEqual(2, \'2\')');
+                assertInstance.AssertionError, 'strictEqual(2, \'2\')');
   assert.throws(
     () => {
       assertInstance.partialDeepStrictEqual({ a: true }, { a: false }, 'custom message');
