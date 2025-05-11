@@ -536,6 +536,8 @@ node_api_post_finalizer(node_api_basic_env env,
                         void* finalize_data,
                         void* finalize_hint);
 
+#warning "NAPI_EXPERIMENTAL is enabled. Experimental features may be unstable."
+
 #endif  // NAPI_EXPERIMENTAL
 
 #if NAPI_VERSION >= 6
