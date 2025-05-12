@@ -1,0 +1,72 @@
+gyp info it worked if it ends with ok
+gyp verb cli [
+gyp verb cli '*/.nvm/versions/node/v22.15.0/bin/node',
+gyp verb cli '*/.nvm/versions/node/v22.15.0/bin/node-gyp',
+gyp verb cli 'rebuild',
+gyp verb cli '--verbose',
+gyp verb cli '--nodedir=*'
+gyp verb cli ]
+gyp info using node-gyp@11.2.0
+gyp info using node@22.15.0 | darwin | arm64
+gyp verb clean removing "build" directory
+gyp verb find Python Python is not set from command line or npm configuration
+gyp verb find Python Python is not set from environment variable PYTHON
+gyp verb find Python checking if "python3" can be used
+gyp verb find Python - executing "python3" to get executable path
+gyp verb find Python - executable path is "/opt/homebrew/opt/python@3.13/bin/python3.13"
+gyp verb find Python - executing "/opt/homebrew/opt/python@3.13/bin/python3.13" to get version
+gyp verb find Python - version is "3.13.3"
+gyp info find Python using Python version 3.13.3 found at "/opt/homebrew/opt/python@3.13/bin/python3.13"
+gyp verb get node dir compiling against specified --nodedir dev files: *
+gyp verb build dir attempting to create "build" dir: */test/js-native-api/test_warning/build
+gyp verb build dir "build" dir needed to be created? Yes
+gyp verb build/config.gypi creating config file
+gyp WARN read config.gypi ENOENT: no such file or directory, open '*/include/node/config.gypi'
+gyp verb build/config.gypi writing out config file: */test/js-native-api/test_warning/build/config.gypi
+gyp verb config.gypi checking for gypi file: */test/js-native-api/test_warning/config.gypi
+gyp verb common.gypi checking for gypi file: */test/js-native-api/test_warning/common.gypi
+gyp verb gyp gyp format was not specified; forcing "make"
+gyp info spawn /opt/homebrew/opt/python@3.13/bin/python3.13
+gyp info spawn args [
+gyp info spawn args '*/.nvm/versions/node/v22.15.0/lib/node_modules/node-gyp/gyp/gyp_main.py',
+gyp info spawn args 'binding.gyp',
+gyp info spawn args '-f',
+gyp info spawn args 'make',
+gyp info spawn args '-I',
+gyp info spawn args '*/test/js-native-api/test_warning/build/config.gypi',
+gyp info spawn args '-I',
+gyp info spawn args '*/.nvm/versions/node/v22.15.0/lib/node_modules/node-gyp/addon.gypi',
+gyp info spawn args '-I',
+gyp info spawn args '*/common.gypi',
+gyp info spawn args '-Dlibrary=shared_library',
+gyp info spawn args '-Dvisibility=default',
+gyp info spawn args '-Dnode_root_dir=*',
+gyp info spawn args '-Dnode_gyp_dir=*/.nvm/versions/node/v22.15.0/lib/node_modules/node-gyp',
+gyp info spawn args '-Dnode_lib_file=*/$(Configuration)/node.lib',
+gyp info spawn args '-Dmodule_root_dir=*/test/js-native-api/test_warning',
+gyp info spawn args '-Dnode_engine=v8',
+gyp info spawn args '--depth=.',
+gyp info spawn args '--no-parallel',
+gyp info spawn args '--generator-output',
+gyp info spawn args 'build',
+gyp info spawn args '-Goutput_dir=.'
+gyp info spawn args ]
+gyp verb build type Release
+gyp verb architecture arm64
+gyp verb node dev dir *
+gyp verb python /opt/homebrew/opt/python@3.13/bin/python3.13
+gyp verb `which` succeeded for `make` /usr/bin/make
+gyp verb bin symlinks created symlink to "/opt/homebrew/opt/python@3.13/bin/python3.13" in "*/test/js-native-api/test_warning/build/node_gyp_bins" and added to PATH
+gyp info spawn make
+gyp info spawn args [ 'V=1', 'BUILDTYPE=Release', '-C', 'build' ]
+  clang++ -o Release/obj.target/binding/binding.o ../binding.cc '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-D_DARWIN_USE_64_BIT_INODE=1' '-D_LARGEFILE_SOURCE' '-DOPENSSL_NO_PINSHARED' '-DOPENSSL_THREADS' '-DNAPI_EXPERIMENTAL' '-DBUILDING_NODE_EXTENSION' -I*/include/node -I*/src -I*/deps/openssl/config -I*/deps/openssl/openssl/include -I*/deps/uv/include -I*/deps/zlib -I*/deps/v8/include  -O3 -gdwarf-2 -fno-strict-aliasing -mmacosx-version-min=13.5 -arch arm64 -Wall -Wendif-labels -W -Wno-unused-parameter -std=gnu++20 -stdlib=libc++ -fno-rtti -fno-exceptions -MMD -MF ./Release/.deps/Release/obj.target/binding/binding.o.d.raw   -c
+In file included from ../binding.cc:1:
+In file included from */src/node_api.h:12:
+*/src/js_native_api.h:25:2: warning: "NAPI_EXPERIMENTAL is enabled. Experimental features may be unstable." [-W#warnings]
+   25 | #warning "NAPI_EXPERIMENTAL is enabled. Experimental features may be unstable."
+      |  ^
+1 warning generated.
+  clang++ -bundle -undefined dynamic_lookup -Wl,-search_paths_first -mmacosx-version-min=13.5 -arch arm64 -L./Release -stdlib=libc++  -o Release/binding.node Release/obj.target/binding/binding.o
+  clang++ -o Release/obj.target/binding2/binding2.o ../binding2.cc '-DNODE_GYP_MODULE_NAME=binding2' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-D_DARWIN_USE_64_BIT_INODE=1' '-D_LARGEFILE_SOURCE' '-DOPENSSL_NO_PINSHARED' '-DOPENSSL_THREADS' '-DNAPI_EXPERIMENTAL' '-DNODE_API_EXPERIMENTAL_NO_WARNING' '-DBUILDING_NODE_EXTENSION' -I*/include/node -I*/src -I*/deps/openssl/config -I*/deps/openssl/openssl/include -I*/deps/uv/include -I*/deps/zlib -I*/deps/v8/include  -O3 -gdwarf-2 -fno-strict-aliasing -mmacosx-version-min=13.5 -arch arm64 -Wall -Wendif-labels -W -Wno-unused-parameter -std=gnu++20 -stdlib=libc++ -fno-rtti -fno-exceptions -MMD -MF ./Release/.deps/Release/obj.target/binding2/binding2.o.d.raw   -c
+  clang++ -bundle -undefined dynamic_lookup -Wl,-search_paths_first -mmacosx-version-min=13.5 -arch arm64 -L./Release -stdlib=libc++  -o Release/binding2.node Release/obj.target/binding2/binding2.o
+gyp info ok
