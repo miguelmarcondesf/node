@@ -266,10 +266,4 @@ node_api_get_module_file_name(node_api_basic_env env, const char** result);
 
 EXTERN_C_END
 
-#ifdef NAPI_EXPERIMENTAL
-
-#warning "NAPI_EXPERIMENTAL is enabled. Experimental features may be unstable."
-
-#endif  // NAPI_EXPERIMENTAL
-
 #endif  // SRC_NODE_API_H_

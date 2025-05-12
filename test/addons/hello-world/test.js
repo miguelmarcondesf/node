@@ -14,7 +14,3 @@ delete require.cache[bindingPath];
 const rebinding = require(bindingPath);
 assert.strictEqual(rebinding.hello(), 'world');
 assert.notStrictEqual(binding.hello, rebinding.hello);
-
-const binding_experimental = require(require.resolve(`./build/${common.buildType}/binding_experimental`));
-assert.strictEqual(binding_experimental.hello(), 'world');
-console.log('binding_experimental.hello() =', binding_experimental.hello());

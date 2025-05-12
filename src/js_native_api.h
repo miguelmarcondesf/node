@@ -21,6 +21,10 @@
 #endif
 #endif
 
+#if defined(NAPI_EXPERIMENTAL) && !defined(NODE_API_EXPERIMENTAL_NO_WARNING)
+#warning "NAPI_EXPERIMENTAL is enabled. Experimental features may be unstable."
+#endif
+
 #include "js_native_api_types.h"
 
 // If you need __declspec(dllimport), either include <node_api.h> instead, or
@@ -535,8 +539,6 @@ node_api_post_finalizer(node_api_basic_env env,
                         napi_finalize finalize_cb,
                         void* finalize_data,
                         void* finalize_hint);
-
-#warning "NAPI_EXPERIMENTAL is enabled. Experimental features may be unstable."
 
 #endif  // NAPI_EXPERIMENTAL
 
