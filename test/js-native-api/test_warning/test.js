@@ -14,21 +14,12 @@ assert.strictEqual(binding2.hello(), 'world');
 {
   const warningMessage = '#warning "NAPI_EXPERIMENTAL is enabled. Experimental features may be unstable."';
 
-  const gccLogFilePath = path.resolve(__dirname, './build_logs/build_gcc.log');
-  const gccLogContent = fs.readFileSync(gccLogFilePath, 'utf8');
+  const logFilePath = path.resolve(__dirname, './logs/build.log');
+  const logContent = fs.readFileSync(logFilePath, 'utf8');
 
-  const gccWarningCount = gccLogContent.split(warningMessage).length - 1;
-  const gccHasWarning = gccLogContent.includes(warningMessage);
+  const warningCount = logContent.split(warningMessage).length - 1;
+  const hasWarning = logContent.includes(warningMessage);
 
-  assert.strictEqual(gccHasWarning, true, `Expected warning not found: "${warningMessage}"`);
-  assert.strictEqual(gccWarningCount, 1, `Expected warning to appear exactly once, but found ${gccWarningCount} occurrences.`);
-
-  const clangLogFilePath = path.resolve(__dirname, './build_logs/build_clang.log');
-  const clangLogContent = fs.readFileSync(clangLogFilePath, 'utf8');
-
-  const clangWarningCount = clangLogContent.split(warningMessage).length - 1;
-  const clangHasWarning = clangLogContent.includes(warningMessage);
-
-  assert.strictEqual(clangHasWarning, true, `Expected warning not found: "${warningMessage}"`);
-  assert.strictEqual(clangWarningCount, 1, `Expected warning to appear exactly once, but found ${gccWarningCount} occurrences.`);
+  assert.strictEqual(hasWarning, true, `Expected warning not found: "${warningMessage}"`);
+  assert.strictEqual(warningCount, 1, `Expected warning to appear exactly once, but found ${warningCount} occurrences.`);
 }

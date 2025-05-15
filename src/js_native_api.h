@@ -21,7 +21,9 @@
 #endif
 #endif
 
-#if defined(NAPI_EXPERIMENTAL) && !defined(NODE_API_EXPERIMENTAL_NO_WARNING)
+#if defined(NAPI_EXPERIMENTAL) &&                                              \
+    !defined(NODE_API_EXPERIMENTAL_NO_WARNING) &&                              \
+    !defined(NODE_WANT_INTERNALS)
 #warning "NAPI_EXPERIMENTAL is enabled. Experimental features may be unstable."
 #endif
 

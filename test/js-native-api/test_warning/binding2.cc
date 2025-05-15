@@ -1,7 +1,6 @@
 #include <node_api.h>
 
-static napi_value Method(const napi_env env,
-       const napi_callback_info info) {
+static napi_value Method(const napi_env env, const napi_callback_info info) {
   napi_value result;
   napi_create_string_utf8(env, "world", NAPI_AUTO_LENGTH, &result);
   return result;
